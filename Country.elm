@@ -70,13 +70,13 @@ subscriptions model =
 
 
 -- HTTP
-
+-- APPID  Generate an appId on api.openweathermap.org and replace with APPID
 
 getCountry : String -> Cmd Msg
 getCountry location =
   let
     url =
-      "http://api.openweathermap.org/data/2.5/weather?q=" ++ location ++"&appid=dabbe19700759dfe1d05821c3876b9c5"
+      "http://api.openweathermap.org/data/2.5/weather?q=" ++ location ++"&appid=<APPID>"
   in
     Http.send NewCountryCode (Http.get url decodeCountry)
 
